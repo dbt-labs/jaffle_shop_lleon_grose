@@ -14,6 +14,9 @@ sources:
             tests:
               - unique
               - not_null
+              - relationships:
+                  to: source('my_jaffle_shop','orders')
+                  field: user_id
 
       - name: orders
         description: Raw orders data.
@@ -32,4 +35,20 @@ sources:
 #
 # dbt run-operation generate_source --args '{"schema_name": "jaffle_shop", "database_name": "raw", "generate_columns": true, "include_descriptions": true}'
 #
-#
+#sources:
+#  - name: my_jaffle_shop
+#    description: A clone of a Postgres application database.
+#    database: raw
+#    schema: jaffle_shop
+#    tables:
+#      - name: customers
+#        description: Raw customers data.
+#        columns:
+#          - name: id
+#            description: Primary key for customers.
+#            tests:
+#              - unique
+#              - not_null
+#               - relationships:
+#                   to: source('my_jaffle_shop','orders')
+#                   field: user_id
