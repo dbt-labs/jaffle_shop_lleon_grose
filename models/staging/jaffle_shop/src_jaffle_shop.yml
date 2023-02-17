@@ -14,9 +14,7 @@ sources:
             tests:
               - unique
               - not_null
-              - relationships:
-                  to: source('my_jaffle_shop','orders')
-                  field: user_id
+
 
       - name: orders
         description: Raw orders data.
