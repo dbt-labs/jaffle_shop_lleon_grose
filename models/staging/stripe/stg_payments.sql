@@ -1,9 +1,6 @@
 {{
     config(
-        tags=['finance'],
-        post_hook=[
-            "grant select on {{ this }} to role reporter"
-        ]
+        tags=['finance']
     )
 }}
 
