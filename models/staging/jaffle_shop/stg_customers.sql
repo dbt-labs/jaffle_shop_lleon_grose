@@ -1,7 +1,8 @@
 select
     id as customer_id,
     first_name,
-    last_name 
+    last_name ,
+    1 as new_col
 
 --from raw.jaffle_shop.customers
 from {{ source('my_jaffle_shop', 'customers') }}
